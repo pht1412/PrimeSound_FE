@@ -37,6 +37,6 @@ class ImageConstant {
 
   // Trending Track Item Screen
   static String imgMaterialSymbol = '${_basePath}img_material_symbol.svg';
- // static String imgMaterialSymbol = '${_basePath}img_material_symbol.svg';
+  static String imgMaterialSymbol = '${_basePath}img_material_symbol.svg';
   
 }
