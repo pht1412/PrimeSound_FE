@@ -110,3 +110,6 @@ Hôm nay là chúng ta sẽ làm bài tập về nhà môn Công cụ
 Ngày 6 tháng 3
 
 bổ sung một dòng
+
+undo một commit
+bổ sung một dòng
