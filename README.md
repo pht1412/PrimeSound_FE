@@ -103,3 +103,5 @@ compare: feature/...
 
 
 Hôm nay là chúng ta sẽ làm bài tập về nhà môn Công cụ
+
+Đã xong phần 2.
