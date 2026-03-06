@@ -1,5 +1,7 @@
 # 🚀 Tài Liệu Kiến Trúc Dự Án (Chuẩn AI UI/UX)
+
 ## 📌 Nguyên tắc sống còn của Team (Core Rules)
+
 1. **KHÔNG TỰ Ý TẠO THÊM FOLDER GỐC** trong thư mục `lib/`. Mọi tính năng mới đều phải tuân thủ việc gắp/bỏ vào 5 thư mục có sẵn dưới đây.
 2. **KHÔNG HARDCODE MÀU SẮC, FONT CHỮ.** Tất cả phải gọi qua `appTheme` và `TextStyleHelper.instance`.
 3. **KHÔNG HARDCODE KÍCH THƯỚC.** Mọi con số chiều cao, chiều rộng phải gắn hậu tố `.h` hoặc `.fSize` để giao diện tự động co giãn.
@@ -9,39 +11,43 @@
 ## 📂 Cấu trúc thư mục `lib/` và Trách nhiệm
 
 ### 1. `core/` (Lõi Ứng Dụng)
-* **Mục đích:** Chứa các công cụ, cấu hình và tiện ích dùng chung toàn hệ thống.
-* **Thành phần:**
-    * `app_export.dart`: File trung chuyển. Muốn import nhiều thư viện, chỉ cần import file này.
-    * `utils/image_constant.dart`: Từ điển lưu đường dẫn ảnh (`assets/images/...`).
-    * `utils/size_utils.dart`: Thước đo vạn năng hỗ trợ UI Responsive.
-    * `utils/navigator_service.dart`: Xử lý chuyển trang không cần context.
-    * *(Thêm mới khi cần)* `utils/api_client.dart`: Nơi chứa các hàm cấu hình kết nối mạng (Dio/HTTP) để gọi API.
+
+- **Mục đích:** Chứa các công cụ, cấu hình và tiện ích dùng chung toàn hệ thống.
+- **Thành phần:**
+  - `app_export.dart`: File trung chuyển. Muốn import nhiều thư viện, chỉ cần import file này.
+  - `utils/image_constant.dart`: Từ điển lưu đường dẫn ảnh (`assets/images/...`).
+  - `utils/size_utils.dart`: Thước đo vạn năng hỗ trợ UI Responsive.
+  - `utils/navigator_service.dart`: Xử lý chuyển trang không cần context.
+  - _(Thêm mới khi cần)_ `utils/api_client.dart`: Nơi chứa các hàm cấu hình kết nối mạng (Dio/HTTP) để gọi API.
 
 ### 2. `theme/` (Hệ thống Thiết kế - Design System)
-* **Mục đích:** Quản lý toàn bộ nhan sắc (Màu sắc, Font chữ) của app.
-* **Thành phần:**
-    * `theme_helper.dart`: Quản lý mã màu Hex (gọi qua `appTheme`).
-    * `text_style_helper.dart`: Quản lý cỡ chữ, độ dày chữ.
+
+- **Mục đích:** Quản lý toàn bộ nhan sắc (Màu sắc, Font chữ) của app.
+- **Thành phần:**
+  - `theme_helper.dart`: Quản lý mã màu Hex (gọi qua `appTheme`).
+  - `text_style_helper.dart`: Quản lý cỡ chữ, độ dày chữ.
 
 ### 3. `routes/` (Bản đồ Điều hướng)
-* **Mục đích:** Quản lý tên các đường dẫn (URL) của toàn bộ màn hình.
-* **Thành phần:** `app_routes.dart` chứa Map định tuyến. Khi tạo màn hình mới, bắt buộc phải đăng ký route vào đây.
+
+- **Mục đích:** Quản lý tên các đường dẫn (URL) của toàn bộ màn hình.
+- **Thành phần:** `app_routes.dart` chứa Map định tuyến. Khi tạo màn hình mới, bắt buộc phải đăng ký route vào đây.
 
 ### 4. `widgets/` (Kho Linh Kiện UI)
-* **Mục đích:** Chứa các component giao diện dùng lại nhiều lần.
-* **Thành phần:** `custom_button`, `custom_app_bar`, `custom_image_view`... 
-* **Quy tắc:** Chia folder theo tính năng (VD: `widgets/home/`, `widgets/login/`) để không bị lộn xộn.
+
+- **Mục đích:** Chứa các component giao diện dùng lại nhiều lần.
+- **Thành phần:** `custom_button`, `custom_app_bar`, `custom_image_view`...
+- **Quy tắc:** Chia folder theo tính năng (VD: `widgets/home/`, `widgets/login/`) để không bị lộn xộn.
 
 ### 5. `presentation/` (Tầng Giao Diện & Logic Màn Hình)
-* **Mục đích:** Chứa từng màn hình của ứng dụng, áp dụng triệt để pattern BLoC.
-* **Cấu trúc 1 thư mục màn hình (VD: `login_screen/`):**
-    * `login_screen.dart`: Vẽ UI tổng thể (Scaffold).
-    * `models/`: Chứa khuôn mẫu dữ liệu (Object) riêng của màn hình đó.
-    * `bloc/`:
-        * `..._event.dart`: Người dùng làm gì? (Bấm nút, nhập text...).
-        * `..._state.dart`: Trạng thái UI hiện tại là gì? (Đang load, Lỗi, Thành công...).
-        * `..._bloc.dart`: Xử lý logic, gọi API lấy dữ liệu và trả ra State mới.
 
+- **Mục đích:** Chứa từng màn hình của ứng dụng, áp dụng triệt để pattern BLoC.
+- **Cấu trúc 1 thư mục màn hình (VD: `login_screen/`):**
+  - `login_screen.dart`: Vẽ UI tổng thể (Scaffold).
+  - `models/`: Chứa khuôn mẫu dữ liệu (Object) riêng của màn hình đó.
+  - `bloc/`:
+    - `..._event.dart`: Người dùng làm gì? (Bấm nút, nhập text...).
+    - `..._state.dart`: Trạng thái UI hiện tại là gì? (Đang load, Lỗi, Thành công...).
+    - `..._bloc.dart`: Xử lý logic, gọi API lấy dữ liệu và trả ra State mới.
 
 ====== WORKFLOW======
 Bước 1: Chuẩn bị công cụ gọi API (Chỉ làm 1 lần ở core/)
@@ -67,7 +73,7 @@ Event: Tạo LoginButtonPressedEvent (Khi user bấm Đăng nhập).
 
 State: Tạo các trạng thái: LoginLoading (hiển thị vòng xoay), LoginSuccess (chuyển trang), LoginFailure (báo lỗi sai mật khẩu).
 
-BLoC (Gọi API ở đây): * Khi nhận được LoginButtonPressedEvent, Bloc sẽ gọi hàm từ api_client.dart (từ core/) để ném username/password lên server.
+BLoC (Gọi API ở đây): \* Khi nhận được LoginButtonPressedEvent, Bloc sẽ gọi hàm từ api_client.dart (từ core/) để ném username/password lên server.
 
 Nếu server trả về OK -> BLoC phát ra (emit) LoginSuccess.
 Nếu server báo sai -> BLoC emit LoginFailure.
@@ -95,10 +101,13 @@ git push origin feature/...
 Cuối cùng lên web GIT:
 Tạo Pull Request → develop
 Gán reviewer
-Lưu ý: 
+Lưu ý:
 base: develop
 compare: feature/...
->>>>>>> 5f850d70ad6bc58aaaf1fef5d2caed0df7f334de
 
-Lê nguyễn khánh duy 
+> > > > > > > 5f850d70ad6bc58aaaf1fef5d2caed0df7f334de
+
+Lê nguyễn khánh duy
 Baitapvenha123
+
+Nguyễn Đặng Yến Nhi
