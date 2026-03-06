@@ -113,3 +113,8 @@ Ngày 6 tháng 3
 bổ sung một dòng
 
 undo một commit
+
+commit số 1
+
+commit số 2
+
