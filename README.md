@@ -98,6 +98,9 @@ Lưu ý:
 base: develop
 compare: feature/...
 
+- **Music Upload**: Khởi tạo giao diện (UI) và bộ khung quản lý trạng thái (BLoC) cho tính năng tải nhạc.
+
+
 Lê nguyễn khánh duy 
 Baitapvenha123
 
