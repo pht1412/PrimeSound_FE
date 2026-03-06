@@ -99,3 +99,4 @@ Lưu ý:
 base: develop
 compare: feature/...
 >>>>>>> 5f850d70ad6bc58aaaf1fef5d2caed0df7f334de
+- **Music Upload**: Khởi tạo giao diện (UI) và bộ khung quản lý trạng thái (BLoC) cho tính năng tải nhạc.
