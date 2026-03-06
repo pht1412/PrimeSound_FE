@@ -78,8 +78,7 @@ File login_screen.dart lúc này chỉ việc lắng nghe BLoC.
 
 Nếu thấy State là LoginLoading, UI tự hiện vòng quay.
 Nếu thấy State là LoginSuccess, UI gọi NavigatorService.pushNamed(AppRoutes.musicHomeScreen) (dùng service ở thư mục core) để đẩy thẳng user vào trang chủ.
-<<<<<<< HEAD
-=======
+
 
 ==== GIT =====
 Trước khi code:
@@ -98,8 +97,12 @@ Gán reviewer
 Lưu ý: 
 base: develop
 compare: feature/...
->>>>>>> 5f850d70ad6bc58aaaf1fef5d2caed0df7f334de
 
+- **Music Upload**: Khởi tạo giao diện (UI) và bộ khung quản lý trạng thái (BLoC) cho tính năng tải nhạc.
+
+
+Lê nguyễn khánh duy 
+Baitapvenha123
 
 
 Hôm nay là chúng ta sẽ làm bài tập về nhà môn Công cụ
@@ -109,3 +112,4 @@ Ngày 6 tháng 3
 bổ sung một dòng
 
 undo một commit
+bổ sung một dòng
